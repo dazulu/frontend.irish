@@ -1,0 +1,24 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 20px 0 20px;
+}
+
+.title {
+  font-family: "Quicksand", sans-serif;
+  font-weight: 700;
+  font-size: calc(14px + 2vmin);
+}
+
+.button {
+  line-height: 0;
+  height: 35px;
+  width: 35px;
+  background: none;
+  border: 0;
+  color: #fff;
+}
