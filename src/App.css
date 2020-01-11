@@ -13,15 +13,33 @@
     url("/fonts/quicksand-v19-latin-700.woff") format("woff");
 }
 
+@font-face {
+  font-family: "Quicksand";
+  font-style: normal;
+  font-weight: 400;
+  src: local(""), url("/fonts/quicksand-v19-latin-regular.woff2") format("woff2"),
+    url("/fonts/quicksand-v19-latin-regular.woff") format("woff");
+}
+
 h1 {
   font-family: "Quicksand", sans-serif;
   font-size: 46px;
   font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+p {
+  font-family: "Quicksand", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  margin-bottom: 1rem;
 }
 
 .page {
   background: #fff;
-  padding-top: 65px;
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-top: 130px;
   height: 100%;
   width: 100%;
 }
