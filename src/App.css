@@ -9,6 +9,14 @@
   color: white;
 }
 
+@font-face {
+  font-family: "Quicksand";
+  font-style: normal;
+  font-weight: 700;
+  src: local(""), url("/fonts/quicksand-v19-latin-700.woff2") format("woff2"),
+    url("/fonts/quicksand-v19-latin-700.woff") format("woff");
+}
+
 /* Box sizing rules */
 *,
 *::before,
