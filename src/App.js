@@ -5,7 +5,7 @@ import Pages from "./components/pages"
 import Menu from "./components/menu"
 
 import "./reset.css"
-import "./app.css"
+import "./App.css"
 
 function App(props) {
   return (
