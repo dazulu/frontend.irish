@@ -6,19 +6,52 @@
   display: flex;
   justify-content: space-between;
   padding: 20px 20px 0 20px;
+  height: 65px;
+  z-index: 1;
 }
 
-.title {
+.name {
   font-family: "Quicksand", sans-serif;
   font-weight: 700;
   font-size: calc(14px + 2vmin);
 }
 
-.button {
+.menu--open .name {
+  color: #fff;
+}
+
+.menu-button {
+  cursor: pointer;
   line-height: 0;
   height: 35px;
   width: 35px;
   background: none;
   border: 0;
   color: #fff;
+  position: relative;
+  padding: 0;
+
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+}
+
+.menu-button > div {
+  height: 5px;
+  width: 32px;
+  background-color: #111;
+  border-radius: 8px;
+  margin: 3px 0;
+}
+
+.menu--open .menu-button > div {
+  background-color: #fff;
+}
+
+.menu-button > div:nth-child(2) {
+  width: 26px;
+}
+
+.menu-button > div:nth-child(3) {
+  width: 30px;
 }

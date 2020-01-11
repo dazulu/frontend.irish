@@ -1,0 +1,17 @@
+.menu {
+  position: absolute;
+  top: 120px;
+  right: 0;
+}
+
+.menu__item {
+  list-style-type: none;
+  padding: 5px 0;
+}
+
+.menu__link {
+  font-family: "Quicksand", "sans-serif";
+  font-size: 22px;
+  color: #fff;
+  text-decoration: none;
+}
