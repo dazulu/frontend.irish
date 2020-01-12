@@ -12,7 +12,9 @@ function Pages() {
       x: 0,
       y: 0,
       z: 0,
+      height: "100vh",
       borderTopRightRadius: 0,
+      borderBottomRightRadius: 0,
       overflow: "initial",
       transition: {
         ease: "easeOut"
@@ -22,7 +24,9 @@ function Pages() {
       y: 50,
       x: -200,
       z: -100,
+      height: "95vh",
       borderTopRightRadius: 40,
+      borderBottomRightRadius: 40,
       overflow: "hidden",
       transition: {
         type: "spring",
