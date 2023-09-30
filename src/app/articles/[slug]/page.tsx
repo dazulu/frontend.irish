@@ -1,10 +1,18 @@
 import { createClient } from "contentful";
-import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+import {
+  documentToReactComponents,
+  Options,
+} from "@contentful/rich-text-react-renderer";
 import type { BlogPostsResult, BlogPostPageProps } from "@/app/types";
+import { SyntaxHighlighter } from "@/app/syntax";
 
 const client = createClient({
   space: process.env.CONTENTFUL_SPACE_ID as string,
   accessToken: process.env.CONTENTFUL_ACCESS_TOKEN as string,
+  host:
+    process.env.NODE_ENV === "development"
+      ? "preview.contentful.com"
+      : undefined,
 });
 
 export async function generateStaticParams() {
@@ -32,6 +40,18 @@ export default async function BlogPage(props: BlogPostPageProps) {
   const { slug } = params;
   const article = await fetchBlogPost(slug);
 
+  const options: Options = {
+    renderNode: {
+      "embedded-entry-block": (node) => {
+        const contentType = node.data.target.sys.contentType.sys.id;
+        if (contentType === "codeBlock") {
+          return <SyntaxHighlighter code={node.data.target.fields.snippet} />;
+        }
+        // handle other content types...
+      },
+    },
+  };
+
   const { title, publishedDate, content } = article.fields;
   return (
     <main className="min-h-screen p-24 flex justify-center">
@@ -46,7 +66,7 @@ export default async function BlogPage(props: BlogPostPageProps) {
           })}
         </p>
         <div className="[&>p]:mb-8 [&>h2]:font-extrabold">
-          {documentToReactComponents(content)}
+          {documentToReactComponents(content, options)}
         </div>
       </div>
     </main>
