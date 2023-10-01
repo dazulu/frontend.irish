@@ -23,11 +23,11 @@ const getBlogEntries = async () => {
 export default async function Home() {
   const blogEntries = await getBlogEntries();
   return (
-    <main className="flex min-h-screen flex-col p-24 gap-y-8">
+    <main className="flex min-h-screen flex-col px-[4rem] py-[6rem] gap-y-8 max-w-4xl m-auto">
       {blogEntries.items.map((singlePost) => {
         const { slug, title, publishedDate } = singlePost.fields;
         return (
-          <div key={slug}>
+          <div>
             <Link className="group" href={`/articles/${slug}`}>
               <h2 className="font-extrabold text-xl group-hover:text-blue-500 transition-colors">
                 {title}
